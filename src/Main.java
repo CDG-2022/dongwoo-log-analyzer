@@ -18,7 +18,8 @@ public class Main {
             while((str = br.readLine()) != null) {
                 String [] log = str.split("]");
                 Print print = new Print(log[0], log[1], log[2], log[3]);
-                print.printResult();
+                print.Setting();
+                print.PrintResult();
             }
 
         } catch (FileNotFoundException e){
