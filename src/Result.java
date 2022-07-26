@@ -51,7 +51,17 @@ public class Result {
     }
 
     public void ResultMaxApi() {
+        String api;
 
+        String [] key = second.split("=");
+        StringBuilder arr = new StringBuilder(key[1]);
+
+        arr.delete(4,6);
+        api = arr.toString();
+
+        System.out.println(arr);
+
+        maxApi.setApi(api);
     }
 
     public void ResultStateCode() {
@@ -65,7 +75,25 @@ public class Result {
     }
 
     public void ResultApiServiceId() {
+        String id = null;
+        String [] key = second.split("/");
+        String tmp = key[4];
+        String [] key2 = tmp.split("\\?");
+        id = key2[0];
 
+        if(id.equals("blog")) {
+            apiServiceId.addBlog();
+        } else if(id.equals("book")) {
+            apiServiceId.addBook();
+        } else if(id.equals("image")) {
+            apiServiceId.addImage();
+        } else if(id.equals("knowledge")) {
+            apiServiceId.addKnowledge();
+        } else if(id.equals("news")) {
+            apiServiceId.addNews();
+        } else if(id.equals("vclip")) {
+            apiServiceId.addVclip();
+        }
     }
 
     public void ResultPeakTime() {
@@ -88,10 +116,19 @@ public class Result {
 
     public void PrintResult() {
 
+        System.out.println("최다 호출 APIKEY");
+        System.out.println(maxApi.MaxApiResult());
+
         System.out.println("상태코드 별 횟수");
         System.out.println("10 : " + stateCode.getTen());
         System.out.println("200 : " + stateCode.getTwoHund());
         System.out.println("404 : " + stateCode.getFourZeroFour());
+
+        System.out.println("상위 3개의 API ServiceID와 각각의 요청 수");
+        apiServiceId.top3Sort();
+        System.out.println(apiServiceId.getFirst());
+        System.out.println(apiServiceId.getSecond());
+        System.out.println(apiServiceId.getThird());
 
         System.out.println("웹 브라우저 별 사용비율");
         System.out.println("IE : " + (double)percentageBrowser.getIE()/(double)percentageBrowser.getTotal()*100 + "%");

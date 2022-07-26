@@ -24,6 +24,7 @@ public class Main {
                 result.Setting();
                 result.ResultStateCode();
                 result.ResultPercentageBrowser();
+                result.ResultApiServiceId();
             }
             result.PrintResult();
 
