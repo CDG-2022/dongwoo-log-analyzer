@@ -14,12 +14,15 @@ public class Main {
             FileReader fr = new FileReader("C://input.log");
             BufferedReader br = new BufferedReader(fr);
             String str;
-
+            Result result = new Result();
             while((str = br.readLine()) != null) {
                 String [] log = str.split("]");
-                Print print = new Print(log[0], log[1], log[2], log[3]);
-                print.Setting();
-                print.PrintResult();
+                result.setFirst(log[0]);
+                result.setSecond(log[1]);
+                result.setThird(log[2]);
+                result.setFourth(log[3]);
+                result.Setting();
+
             }
 
         } catch (FileNotFoundException e){
