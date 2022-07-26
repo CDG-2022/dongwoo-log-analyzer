@@ -6,9 +6,11 @@ public class StateCode {
     public void addTen() {
         this.ten++;
     }
+
     public void addTwoHund() {
         this.twoHund++;
     }
+
     public void addFourZeroFour() {
         this.fourZeroFour++;
     }

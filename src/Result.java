@@ -73,31 +73,33 @@ public class Result {
     }
 
     public void ResultPercentageBrowser() {
-        int IE = 0, FireFox = 0, Safari = 0, Chrome = 0, Opera = 0;
-        if(third == "IE") {
-            IE++;
-        }else if(third == "FireFox") {
-            FireFox++;
-        }else if(third == "Safari") {
-            Safari++;
-        }else if(third == "Chrome") {
-            Chrome++;
-        }else if(third == "Opera") {
-            Opera++;
+        if(third.equals("IE")) {
+            percentageBrowser.addIE();
+        }else if(third.equals("Firefox")) {
+            percentageBrowser.addFireFox();
+        }else if(third.equals("Safari")) {
+            percentageBrowser.addSafari();
+        }else if(third.equals("Chrome")) {
+            percentageBrowser.addChrome();
+        }else if(third.equals("Opera")) {
+            percentageBrowser.addOpera();
         }
-        int total = IE + FireFox + Safari + Chrome + Opera;
-        System.out.println("웹 브라우저 별 사용비율");
-        System.out.println("IE : " + IE/total*100);
-        System.out.println("FireFox" + FireFox/total*100);
-        System.out.println("Safari" + Safari/total*100);
-        System.out.println("Chrome : " + Chrome/total*100);
-        System.out.println("Opera : " + Opera/total*100);
     }
 
     public void PrintResult() {
+
         System.out.println("상태코드 별 횟수");
         System.out.println("10 : " + stateCode.getTen());
         System.out.println("200 : " + stateCode.getTwoHund());
         System.out.println("404 : " + stateCode.getFourZeroFour());
+
+        System.out.println("웹 브라우저 별 사용비율");
+        System.out.println("IE : " + (double)percentageBrowser.getIE()/(double)percentageBrowser.getTotal()*100 + "%");
+        System.out.println("FireFox : " + (double)percentageBrowser.getFireFox()/(double)percentageBrowser.getTotal()*100 + "%");
+        System.out.println("Safari : " + (double)percentageBrowser.getSafari()/(double)percentageBrowser.getTotal()*100 + "%");
+        System.out.println("Chrome : " + (double)percentageBrowser.getChrome()/(double)percentageBrowser.getTotal()*100 + "%");
+        System.out.println("Opera : " + (double)percentageBrowser.getOpera()/(double)percentageBrowser.getTotal()*100 + "%");
+
+
     }
 }

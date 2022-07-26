@@ -23,6 +23,7 @@ public class Main {
                 result.setFourth(log[3]);
                 result.Setting();
                 result.ResultStateCode();
+                result.ResultPercentageBrowser();
             }
             result.PrintResult();
 
