@@ -22,8 +22,9 @@ public class Main {
                 result.setThird(log[2]);
                 result.setFourth(log[3]);
                 result.Setting();
-
+                result.ResultStateCode();
             }
+            result.PrintResult();
 
         } catch (FileNotFoundException e){
             System.out.println("파일을 찾지 못했습니다");

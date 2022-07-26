@@ -44,6 +44,10 @@ public class Result {
         second = sbSecond.toString();
         third = sbThird.toString();
         fourth = sbFourth.toString();
+        sbFirst.setLength(0);
+        sbSecond.setLength(0);
+        sbThird.setLength(0);
+        sbFourth.setLength(0);
     }
 
     public void ResultMaxApi() {
@@ -88,5 +92,12 @@ public class Result {
         System.out.println("Safari" + Safari/total*100);
         System.out.println("Chrome : " + Chrome/total*100);
         System.out.println("Opera : " + Opera/total*100);
+    }
+
+    public void PrintResult() {
+        System.out.println("상태코드 별 횟수");
+        System.out.println("10 : " + stateCode.getTen());
+        System.out.println("200 : " + stateCode.getTwoHund());
+        System.out.println("404 : " + stateCode.getFourZeroFour());
     }
 }
